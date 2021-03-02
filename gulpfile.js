@@ -50,8 +50,8 @@ const imagemin     = require('gulp-imagemin');
 const newer        = require('gulp-newer');
 const rsync        = require('gulp-rsync');
 const del          = require('del');
-//const ttf2woff     = require('gulp-ttf2woff');
-//const ttf2woff2    = require('gulp-ttf2woff2');
+const ttf2woff     = require('gulp-ttf2woff');
+const ttf2woff2    = require('gulp-ttf2woff2');
 
 function browsersync() {
 	browserSync.init({
@@ -112,19 +112,19 @@ function startwatch() {
 	watch(srcDir + '/js/**/*.js', scripts);
 }
 
-// function woff2() {
-// 	return src(paths.fonts.src)
-// 		.pipe(ttf2woff2())
-// 		.pipe(dest(paths.fonts.dest));
-// }
+function woff2() {
+ 	return src(paths.fonts.src)
+ 		.pipe(ttf2woff2())
+ 		.pipe(dest(paths.fonts.dest));
+}
 
-// function woff() {
-// 	return src(paths.fonts.src)
-//     	.pipe(ttf2woff())
-//     	.pipe(dest(paths.fonts.dest));
-// }
+function woff() {
+ 	return src(paths.fonts.src)
+     	.pipe(ttf2woff())
+     	.pipe(dest(paths.fonts.dest));
+}
 
-//exports.fonts	 	= parallel(woff, woff2);
+exports.fonts	 	= parallel(woff, woff2);
 exports.browsersync = browsersync;
 exports.assets      = series(cleanimg, styles, scripts, images);
 exports.styles      = styles;

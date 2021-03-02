@@ -1,9 +1,31 @@
 @import 'config';
 
-// CUSTOM USER STYLES & IMPORTS
-
 header {
-    width: 100%;
+   color: $text_color;
+   display: flex;
+   justify-content: space-between;
+   nav{
+      .main-menu{
+         display: flex;
+         font-size: 18px;
+         font-weight: 300;
+         list-style: none;
+         padding: 0;
+         li{
+            position: relative;
+            .dropdown-menu{
+               position: absolute;
+               transform: scaleY(0);
+               opacity: 0;
+               visibility: hidden;
+            }
+         }
+      }
+   }
+}
+
+main {
+    
 }
 
 footer {
