@@ -60,6 +60,9 @@ $small: 576px;
 @include font('Montserrat', normal, 300, '../fonts/Montserrat/Montserrat-Light');
 
 // GENERAL DOCUMENT STYLES
+* {
+	box-sizing: border-box;
+}
 
 ::placeholder {
 	color: #999;
@@ -99,3 +102,16 @@ h2{
 		color: $text_color
 	}
 }
+
+a,
+a:active,
+a:visited{
+	color: $text_color;
+	text-decoration: none;
+	transition: color 0.4s ease-out;
+	&:hover{
+		text-decoration: none;
+		color: $accent;
+	}
+}
+
