@@ -1,9 +1,59 @@
 @import 'config';
 
-// CUSTOM USER STYLES & IMPORTS
-
 header {
-    width: 100%;
+   color: $text_color;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   nav{
+      .main-menu{
+         display: flex;
+         font-size: 1.125rem;
+         font-weight: 300;
+         list-style: none;
+         align-items: center;
+         padding: 0;
+         margin: 0;
+         height: 5rem;
+         li{
+            position: relative;
+            .dropdown-menu{
+               position: absolute;
+               transform: scaleY(0);
+               opacity: 0;
+               visibility: hidden;
+            }
+            &>a{
+               margin: 0 1.45rem;
+               position: relative;
+               &:not(.no-line)::before{
+                  content: '';
+                  width: 100%;
+                  height: 42%;
+                  display: block;
+                  position: absolute;
+                  z-index: -1;
+                  background: $accent;
+                  left: 0;
+                  bottom: 5%;
+                  transform: scaleX(0);
+                  transform-origin: left;
+                  transition: transform 0.3s ease-out;
+               }
+               &:not(.no-line):hover{
+                  color: $text_color;
+                  &::before{
+                     transform: none;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+main {
+    
 }
 
 footer {
