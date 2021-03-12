@@ -11,42 +11,94 @@ header {
          font-size: 1.125rem;
          font-weight: 300;
          list-style: none;
-         align-items: center;
+         align-items: stretch;
          padding: 0;
          margin: 0;
          height: 5rem;
-         li{
+         &>li{
             position: relative;
+            display: flex;
+            align-items: center;
             .dropdown-menu{
                position: absolute;
+               transform-origin: top;
+               background: #232933;
+               margin: 0;
+               padding: 0;
+               list-style: none;
+               transition: transform 0.4s, opacity 0.3s, visibility 0.3s;
                transform: scaleY(0);
                opacity: 0;
                visibility: hidden;
+               width: 150%; 
+               top: 90%;
+               left: 0;
+               &::before{
+                  content: '';
+                  position: absolute;
+                  width: 0.8rem;
+                  height: 0.8rem;
+                  left: 1rem;
+                  top: -0.4rem;
+                  background: #232933;
+                  transform: rotate(45deg);
+                  z-index: 0;
+               }
+               &.item-right{
+                  left: auto;
+                  right: 0;
+                  &::before{
+                     left: auto;
+                     right: 1rem;
+                  }
+               }
+               li {
+                  position: relative;
+                  z-index: 1;
+                  a{
+                     color: lighten($bg_color, 60%);
+                     font-size: 0.9rem;
+                     padding: 0.5rem 2rem;
+                     display: inline-block;
+                     width: 100%;                     
+                     &:hover{
+                        color: $text_color; 
+                     }
+                  }
+               }
             }
+
             &>a{
                margin: 0 1.45rem;
                position: relative;
                &:not(.no-line)::before{
                   content: '';
                   width: 100%;
-                  height: 42%;
+                  height: 35%;
                   display: block;
                   position: absolute;
                   z-index: -1;
                   background: $accent;
                   left: 0;
-                  bottom: 5%;
+                  bottom: 12%;
                   transform: scaleX(0);
                   transform-origin: left;
                   transition: transform 0.3s ease-out;
-               }
-               &:not(.no-line):hover{
-                  color: $text_color;
-                  &::before{
-                     transform: none;
-                  }
+               }               
+            }
+            &:hover .dropdown-menu{
+               transform: scaleY(1);
+               opacity: 1;
+               visibility: visible;
+            }
+
+            &:hover>a:not(.no-line){
+               color: $text_color;
+               &::before{
+                  transform: none;
                }
             }
+
          }
       }
    }
