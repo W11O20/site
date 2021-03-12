@@ -74,13 +74,13 @@ header {
                &:not(.no-line)::before{
                   content: '';
                   width: 100%;
-                  height: 35%;
+                  height: 25%;
                   display: block;
                   position: absolute;
                   z-index: -1;
                   background: $accent;
                   left: 0;
-                  bottom: 12%;
+                  bottom: 25%;
                   transform: scaleX(0);
                   transform-origin: left;
                   transition: transform 0.3s ease-out;
@@ -92,7 +92,8 @@ header {
                visibility: visible;
             }
 
-            &:hover>a:not(.no-line){
+            &:hover>a:not(.no-line),
+            &.active>a{
                color: $text_color;
                &::before{
                   transform: none;
@@ -104,12 +105,37 @@ header {
    }
 }
 
+.float-panel{
+   position: fixed;
+   width: 5rem;
+   height: 100vh;
+   background-color: $bg_color;
+   top: 0;
+   right: 0;
+   &_left{
+      left: 0;
+      right: auto;
+   }
+   ul{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      transform-origin: top left;
+      transform: rotate(-90deg) translateX(-100vh);
+      width: 100vh;
+      height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+}
+
 main {
     
 }
 
 footer {
-
+   background-color: $bg_color_dark;
 }
 
 
