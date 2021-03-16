@@ -127,6 +127,88 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
+      column-gap: 1.5rem;
+      .social-link{
+         &::before{
+            content: '';
+            display: inline-block;
+            width: 0.4rem;
+            height: 0.4rem;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+         }
+         &_facebook{
+            a:hover{
+               color: $facebook;
+            }
+            &::before{
+               background-color: $facebook;
+            }
+         }
+         &_twitter{
+            a:hover{
+               color: $twitter;
+            }
+            &::before{
+               background-color: $twitter;   
+            }
+         }
+         &_instagram{
+            a:hover{
+               color: $instagram;
+            }
+            &::before{
+               background-color: $instagram;   
+            }
+         }
+         &_pinterest{
+            a:hover{
+               color: $pinterest;
+            }
+            &::before{
+               background-color: $pinterest;   
+            }
+         }
+      }
+   }
+
+   .widgets{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      height: 100%;
+      .widget{
+         display: flex;
+         align-items: center;
+         width: 200px;
+         transform: translateX(160px);
+         transition: transform 0.2s ease-in;
+         &:hover{
+            color: #fff;
+            transform: none;
+         }
+         .icon{
+            padding: 0.5rem 0.6rem;
+            background-color: transparentize(#fff, 0.8);
+            i{
+               line-height: 1;
+            }
+         }
+         p{
+            margin-bottom: 0;
+            padding: 0 0.5rem;
+         }
+         &_navy{
+            background-color: $navy;
+         }
+         &_pink{
+            background-color: $pink;
+         }
+         &_green{
+            background-color: $green;
+         }
+      }
    }
 }
 
