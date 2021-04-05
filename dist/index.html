@@ -1,13 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
+
 <body>
-    <h1>Lorem, ipsum dolor.</h1>
+    <header>
+        <a href="#"><img src="" alt="logo"></a>
+        <nav>
+            <ul class="main-menu">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li>
+                    <a href="#">Works</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Item 1</a></li>
+                        <li><a href="#">Item 2</a></li>        
+                    </ul>
+                </li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Shop</a></li>
+                <li>
+                    <a href="#" class="no-line"><i class="fas fa-shopping-bag"></i></a>
+                    <ul class="dropdown-menu item-right"> 
+                        <li>No products in the cart</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="no-line"><i class="fas fa-search"></i></a>
+                    <ul class="dropdown-menu item-right">
+                        <li>
+                            <form action="#" method="post">
+                                <input type="text" name="search">
+                            </form>
+                        </li>
+                    </ul>                
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main></main>
+    <footer>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, minima. Dicta voluptatem ex laboriosam, consequuntur repellat quaerat! Autem, praesentium, vero ab facilis quod odio nostrum aperiam, atque sit dolor laudantium.</p>
+    </footer>
+    <div class="float-panel float-panel_left">
+        <ul>
+            <li class="social-link social-link_facebook"><a href="#" >facebook</a></li>
+            <li class="social-link social-link_twitter"><a href="#" >twitter</a></li>
+            <li class="social-link social-link_instagram"><a href="#" >instagram</a></li>
+            <li class="social-link social-link_pinterest"><a href="#" >pinterest</a></li>
+        </ul>
+    </div>
+    <div class="float-panel">
+        <div class="widgets">
+            <a href="#" class="widget widget_navy">
+                <div class="icon"><i class="fas fa-tv"></i></div>
+                <p>More products</p>
+            </a>
+            <a href="#" class="widget widget_pink">
+                <div class="icon"><i class="fas fa-tv"></i></div>
+                <p>More products</p>
+            </a>
+            <a href="#" class="widget widget_green">
+                <div class="icon"><i class="fas fa-tv"></i></div>
+                <p>More products</p>
+            </a>
+        </div>
+    </div>
+
+
     <script src="assets/js/script.min.js"></script>
 </body>
+
 </html>
