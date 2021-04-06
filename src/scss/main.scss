@@ -1,0 +1,288 @@
+@import 'config';
+
+header {
+   color: $text_color;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   nav {
+      display: flex;
+
+      .main-menu,
+      .icon-menu {
+         display: flex;
+         font-size: 1.125rem;
+         font-weight: 300;
+         list-style: none;
+         align-items: stretch;
+         padding: 0;
+         margin: 0;
+         height: 5rem;
+
+         &>li {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .dropdown-menu {
+               position: absolute;
+               transform-origin: top;
+               background: #232933;
+               margin: 0;
+               padding: 0;
+               list-style: none;
+               transition: transform 0.4s, opacity 0.3s, visibility 0.3s;
+               transform: scaleY(0);
+               opacity: 0;
+               visibility: hidden;
+               width: 150%;
+               top: 90%;
+               left: 0;
+
+               &::before {
+                  content: '';
+                  position: absolute;
+                  width: 0.8rem;
+                  height: 0.8rem;
+                  left: 1rem;
+                  top: -0.4rem;
+                  background: #232933;
+                  transform: rotate(45deg);
+                  z-index: 0;
+               }
+
+               &.item-right {
+                  left: auto;
+                  right: 0;
+
+                  &::before {
+                     left: auto;
+                     right: 1rem;
+                  }
+               }
+
+               li {
+                  position: relative;
+                  z-index: 1;
+
+                  a {
+                     color: lighten($bg_color, 60%);
+                     font-size: 0.9rem;
+                     padding: 0.5rem 2rem;
+                     display: inline-block;
+                     width: 100%;
+
+                     &:hover {
+                        color: $text_color;
+                     }
+                  }
+               }
+            }
+
+            &>a {
+               margin: 0 1.45rem;
+               position: relative;
+            }
+
+            &:hover .dropdown-menu {
+               transform: scaleY(1);
+               opacity: 1;
+               visibility: visible;
+            }
+         }
+      }
+
+      .main-menu>li {
+         &>a::before {
+            content: '';
+            width: 100%;
+            height: 25%;
+            display: block;
+            position: absolute;
+            z-index: -1;
+            background: $accent;
+            left: 0;
+            bottom: 25%;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease-out;
+         }
+
+         &:hover,
+         &.active {
+            &>a {
+               color: $text_color;
+
+               &::before {
+                  transform: none;
+               }
+            }
+         }
+      }
+   }
+
+   #btn-menu {
+      padding: 0.3rem 0;
+      display: none;
+
+      span {
+         display: block;
+         width: 2rem;
+         height: 1px;
+         background-color: #fff;
+      }
+
+      &::before,
+      &::after {
+         content: '';
+         display: block;
+         width: 100%;
+         height: 1px;
+         background-color: #fff;
+      }
+
+      &::before {
+         margin-bottom: 0.5rem;
+      }
+
+      &::after {
+         margin-top: 0.5rem;
+      }
+   }
+}
+
+.float-panel {
+   position: fixed;
+   width: 5rem;
+   height: 100vh;
+   background-color: $bg_color;
+   top: 0;
+   right: 0;
+
+   &_left {
+      left: 0;
+      right: auto;
+   }
+
+   ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      transform-origin: top left;
+      transform: rotate(-90deg) translateX(-100vh);
+      width: 100vh;
+      height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 1.5rem;
+
+      .social-link {
+         &::before {
+            content: '';
+            display: inline-block;
+            width: 0.4rem;
+            height: 0.4rem;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+         }
+
+         &_facebook {
+            a:hover {
+               color: $facebook;
+            }
+
+            &::before {
+               background-color: $facebook;
+            }
+         }
+
+         &_twitter {
+            a:hover {
+               color: $twitter;
+            }
+
+            &::before {
+               background-color: $twitter;
+            }
+         }
+
+         &_instagram {
+            a:hover {
+               color: $instagram;
+            }
+
+            &::before {
+               background-color: $instagram;
+            }
+         }
+
+         &_pinterest {
+            a:hover {
+               color: $pinterest;
+            }
+
+            &::before {
+               background-color: $pinterest;
+            }
+         }
+      }
+   }
+
+   .widgets {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      height: 100%;
+
+      .widget {
+         display: flex;
+         align-items: center;
+         width: 200px;
+         transform: translateX(160px);
+         transition: transform 0.2s ease-in;
+
+         &:hover {
+            color: #fff;
+            transform: none;
+         }
+
+         .icon {
+            padding: 0.5rem 0.6rem;
+            background-color: transparentize(#fff, 0.8);
+
+            i {
+               line-height: 1;
+            }
+         }
+
+         p {
+            margin-bottom: 0;
+            padding: 0 0.5rem;
+         }
+
+         &_navy {
+            background-color: $navy;
+         }
+
+         &_pink {
+            background-color: $pink;
+         }
+
+         &_green {
+            background-color: $green;
+         }
+      }
+   }
+}
+
+main {}
+
+footer {
+   background-color: $bg_color_dark;
+}
+
+
+@import 'media';

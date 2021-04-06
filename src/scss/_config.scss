@@ -1,0 +1,129 @@
+// USER VARIABLES SECTION
+
+$accent: #E56E6E; // Accent Color
+$font_size: 16px; // Body Font Size
+$line_height: 1.875;
+$text_color: #fff; // Text Color
+$text_color_alt: #909aa3; // Text Color
+
+$menu_color: #232933;
+$bg_color: #191c21;
+$bg_color_dark: #14161b;
+
+$facebook: #3b5998;
+$twitter: #4099ff;
+$instagram: #e4405f;
+$pinterest: #bd081c;
+
+$navy: navy;
+$pink: rgb(207, 60, 85);
+$green: darkgreen;
+
+$font_base: Montserrat, sans-serif; 
+$font_title: Montserrat, sans-serif;
+$font_alt: Poppins, sans-serif; 
+$font_awesome: 'Font Awesome 5 Free';
+$font_awesome_brands: 'Font Awesome 5 Brands';
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 1.875em;
+$gutter: $grid-gutter-width;
+
+$xlarge: 1200px;
+$large: 992px;
+$medium: 768px;
+$small: 576px;
+
+// IMPORT SECTION
+
+@import '../../node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
+@import '../../node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
+@import '../../node_modules/bootstrap/scss/utilities/text'; // Optional Bootstrap Utilites
+
+//@import 'jquery.fancybox.css';
+//@import 'lightslider.css';
+//@import '_slick/slick';
+//@import '_slick/slick-theme';
+
+
+@import '_fontawesome/fontawesome';
+@import '_fontawesome/brands';
+@import '_fontawesome/solid';
+@import '_fontawesome/regular';
+// FONTS LOAD SECTION
+ 
+@mixin font($fname, $fstyle, $fweight, $furl) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		font-display: swap; // Uncomment to initially display system fonts
+		src: local($fname),
+			 url($furl+'.woff2') format('woff2'),
+			 url($furl+'.woff') format('woff');
+	}
+}
+
+@include font('Poppins', normal, 400, '../fonts/Poppins/Poppins-Regular');
+@include font('Poppins', normal, 500, '../fonts/Poppins/Poppins-Medium');
+@include font('Montserrat', normal, 400, '../fonts/Montserrat/Montserrat-Regular');
+@include font('Montserrat', normal, 600, '../fonts/Montserrat/Montserrat-Bold');
+@include font('Montserrat', normal, 300, '../fonts/Montserrat/Montserrat-Light');
+
+// GENERAL DOCUMENT STYLES
+* {
+	box-sizing: border-box;
+}
+
+::placeholder {
+	color: #999;
+}
+
+::selection {
+	background-color: $accent;
+	color: #fff;
+}
+
+input, textarea {
+	outline: none;
+	&:focus:required:invalid { border-color: red }
+	&:required:valid { border-color: green }
+}
+
+body {
+	font-family: $font_base;
+	font-size: $font_size;
+	min-width: 320px;
+	position: relative;
+	line-height: $line_height;
+	overflow-x: hidden;
+	color: $text_color;
+	background-color: $bg_color;
+	padding: 0 5rem;
+}
+
+h2{
+	font-family: $font_title;
+	font-size: 1.143em;
+	line-height: 1.25;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #fff;
+	margin-bottom: 0;
+	&.dark{
+		color: $text_color
+	}
+}
+
+a,
+a:active,
+a:visited{
+	color: $text_color;
+	text-decoration: none;
+	transition: color 0.4s ease-out;
+	&:hover{
+		text-decoration: none;
+		color: $accent;
+	}
+}
+
