@@ -20,6 +20,12 @@
 	header {
 		position: relative;
 		nav {
+			&.expand .main-menu{
+				transform: none;
+			}
+			&.expand #btn-menu{
+				
+			}
  		   .main-menu {
 				transform: translateX(110%);
 				transition: transform 0.5s ease-out;
@@ -35,9 +41,6 @@
 				margin: 0;
 				height: auto;
 
-				&.expand{
-					transform: none;
-				}
 			  &>li {
 				  display: block;
 				 .dropdown-menu {
