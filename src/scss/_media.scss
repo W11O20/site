@@ -24,7 +24,24 @@
 				transform: none;
 			}
 			&.expand #btn-menu{
-				
+				span{
+					opacity: 0;
+					
+					}
+					&::before{
+					   width: 80%;
+					   transform: rotate(135deg);
+					
+					   margin-bottom: -.15rem;
+					   
+					}
+		   
+					&::after{
+					   width: 80%;
+					   transform: rotate(-135deg);
+					
+					   margin-top: -.15rem;
+					}
 			}
  		   .main-menu {
 				transform: translateX(110%);
