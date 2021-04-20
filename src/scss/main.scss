@@ -293,6 +293,30 @@ main {}
 
 footer {
    background-color: $bg_color_dark;
+   padding: 5rem 0 7rem;
+   p, ul{
+      color: $text_color_footer;
+   }
+
+   .footer-copy{
+      font-size: 0.875rem;
+      margin-top: 3rem;
+   }
+   .footer-block-title{
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+   }
+   .footer-block-text a{
+      color: $accent;
+      &:hover{
+         color: $text_color_footer;   
+      }
+   }
+   .footer-social a{
+      color: $text_color_footer;
+   }
+   
 }
 
 
