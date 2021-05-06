@@ -43,9 +43,10 @@ $small: 576px;
 
 //@import 'jquery.fancybox.css';
 //@import 'lightslider.css';
-//@import '_slick/slick';
-//@import '_slick/slick-theme';
+@import '_slick/slick';
+@import '_slick/slick-theme';
 
+@import '../vendors/animate.css';
 
 @import '_fontawesome/fontawesome';
 @import '_fontawesome/brands';

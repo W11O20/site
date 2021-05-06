@@ -11,6 +11,8 @@ let paths = {
 		src: [
 			// 'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
 			srcDir + '/vendors/jquery-3.5.1.js',
+			srcDir + '/vendors/slick/slick.js',
+			srcDir + '/vendors/wow.js',
 			srcDir + '/js/main.js' // app.js. Always at the end
 		],
 		dest: destDir + '/assets/js',

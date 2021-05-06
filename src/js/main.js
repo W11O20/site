@@ -8,4 +8,12 @@ jQuery(function ($) {
     $(event.currentTarget).closest('nav').toggleClass("expand");
   });
 
+  $('.slick-test').slick({
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    dots: true
+  });
+
+  new WOW().init();
+
 });
